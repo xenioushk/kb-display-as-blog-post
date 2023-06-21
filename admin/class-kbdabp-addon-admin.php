@@ -10,7 +10,8 @@
  * @TODO: Rename this class to a proper name for your plugin.
 
  */
-class BKB_kbdabp_Admin {
+class BKB_kbdabp_Admin
+{
 
     /**
      * Instance of this class.
@@ -36,22 +37,22 @@ class BKB_kbdabp_Admin {
      *
      * @since     1.0.0
      */
-    private function __construct() {
+    private function __construct()
+    {
 
-        
+
         //@Description: First we need to check if KB Plugin is activated or not. If not then we display a message and return false.
         //@Since: Version 1.0.5
-        
-        if( ! class_exists( 'BWL_KB_Manager' ) || BKBDABP_PARENT_PLUGIN_REQUIRED_VERSION < '1.0.5' ) {
+
+        if (!class_exists('BwlKbManager\\Init') || BKBDABP_PARENT_PLUGIN_REQUIRED_VERSION < '1.0.5') {
             add_action('admin_notices', array($this, 'kbdabp_version_update_admin_notice'));
             return false;
         }
-        
+
         $plugin = BKB_kbdabp::get_instance();
         $this->plugin_slug = $plugin->get_plugin_slug();
-        
-        require_once( BKBDABP_DIR . 'admin/includes/class-kbdabp-addon-meta-box.php' );
-        
+
+        require_once(BKBDABP_DIR . 'admin/includes/class-kbdabp-addon-meta-box.php');
     }
 
     /**
@@ -61,7 +62,8 @@ class BKB_kbdabp_Admin {
      *
      * @return    object    A single instance of this class.
      */
-    public static function get_instance() {
+    public static function get_instance()
+    {
 
         /*
          * @TODO :
@@ -79,15 +81,14 @@ class BKB_kbdabp_Admin {
 
         return self::$instance;
     }
-    
-    //Version Manager Update Checking
-    
-    public function kbdabp_version_update_admin_notice(){
-        
-        echo '<div class="updated"><p>You need to download & install '
-            . '<b><a href="https://1.envato.market/bkbm-wp" target="_blank">'.BKBDABP_ADDON_PARENT_PLUGIN_TITLE.'</a></b> '
-                . 'to use <b>'.BKBDABP_ADDON_TITLE.'</b>. </p></div>';
-        
-    }
 
+    //Version Manager Update Checking
+
+    public function kbdabp_version_update_admin_notice()
+    {
+
+        echo '<div class="updated"><p>You need to download & install '
+            . '<b><a href="https://1.envato.market/bkbm-wp" target="_blank">' . BKBDABP_ADDON_PARENT_PLUGIN_TITLE . '</a></b> '
+            . 'to use <b>' . BKBDABP_ADDON_TITLE . '</b>. </p></div>';
+    }
 }
