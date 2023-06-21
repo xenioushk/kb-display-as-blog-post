@@ -1,0 +1,40 @@
+.bkb-about-wrap {
+  font-family: inherit;
+
+  ul,
+  li,
+  p {
+    font-size: 14px;
+    line-height: 2em;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    text-align: left !important;
+  }
+
+  small {
+    font-size: 12px;
+  }
+}
+
+.developer-info {
+  font-size: 16px;
+}
+
+.welcome-hr {
+  border: 0px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.plugin-features {
+  width: 70%;
+  vertical-align: top;
+  padding-right: 36px;
+}
+
+.more-plugins {
+  width: 30%;
+  vertical-align: top;
+}

@@ -1,0 +1,12 @@
+#bkbm_verify_purchase {
+  @include flexLeft;
+
+  #purchase_code {
+    width: 300px;
+  }
+
+  #loader {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

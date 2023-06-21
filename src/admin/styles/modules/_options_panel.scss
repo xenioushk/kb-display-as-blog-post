@@ -1,0 +1,75 @@
+body.bwl_kb_page_edit-post_type-bwl_kb_option_panel {
+  .sections {
+    padding-bottom: 32px;
+
+    h2 {
+      border-bottom: 1px solid #edf0f2;
+      padding-bottom: 12px;
+      font-size: 20px;
+      line-height: 24px;
+      margin-top: 12px;
+    }
+    h3 {
+      border-bottom: 1px solid #edf0f2;
+      padding-bottom: 12px;
+      font-size: 18px;
+      line-height: 24px;
+      margin-top: 12px;
+    }
+
+    label {
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+
+    .field {
+      padding: 0 10px 16px 0;
+      border: 0px;
+    }
+  }
+
+  .desc-field {
+    font-size: 14px;
+    margin-bottom: 12px;
+    margin-top: 16px;
+    color: #515151;
+    line-height: 24px;
+    text-shadow: none;
+  }
+
+  .button.wp-picker-clear {
+    right: -70px !important;
+    top: -24px !important;
+    position: relative;
+  }
+  .btn_opt_save {
+    right: 0;
+    left: initial;
+    margin-left: 25px;
+    margin: 0px;
+  }
+}
+
+.at-inline {
+  line-height: 1 !important;
+  .at-field {
+    border: 0px !important;
+  }
+  .at-label {
+    margin: 0 0 1px !important;
+  }
+  .at-text {
+    width: 70px;
+  }
+  .at-textarea {
+    width: 100px;
+    height: 75px;
+  }
+}
+
+.at-repater-block {
+  background-color: #ffffff;
+  border: 1px solid;
+  margin: 2px;
+}
