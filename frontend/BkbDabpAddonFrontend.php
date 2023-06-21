@@ -1,48 +1,21 @@
 <?php
 
-class BKB_kbdabp
+
+/**
+ * @package BkbDabpAddon
+ */
+
+namespace BkbDabpAddon\Frontend;
+
+class BkbDabpAddonFrontend
 {
 
-	/**
-	 * Plugin version, used for cache-busting of style and script file references.
-	 *
-	 * @since   1.0.0
-	 *
-	 * @var     string
-	 */
 	const VERSION = '1.0.3';
 
-	/**
-	 * @TODO - Rename "plugin-name" to the name your your plugin
-	 *
-	 * Unique identifier for your plugin.
-	 *
-	 *
-	 * The variable name is used as the text domain when internationalizing strings
-	 * of text. Its value should match the Text Domain file header in the main
-	 * plugin file.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @var      string
-	 */
 	protected $plugin_slug = 'bkb-kbdabp';
 
-	/**
-	 * Instance of this class.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @var      object
-	 */
 	protected static $instance = null;
 
-	/**
-	 * Initialize the plugin by setting localization and loading public scripts
-	 * and styles.
-	 *
-	 * @since     1.0.0
-	 */
 	private function __construct()
 	{
 
@@ -59,25 +32,12 @@ class BKB_kbdabp
 		}
 	}
 
-	/**
-	 * Return the plugin slug.
-	 *
-	 * @since    1.0.0
-	 *
-	 *@return    Plugin slug variable.
-	 */
 	public function get_plugin_slug()
 	{
 		return $this->plugin_slug;
 	}
 
-	/**
-	 * Return an instance of this class.
-	 *
-	 * @since     1.0.0
-	 *
-	 * @return    object    A single instance of this class.
-	 */
+
 	public static function get_instance()
 	{
 
@@ -89,16 +49,7 @@ class BKB_kbdabp
 		return self::$instance;
 	}
 
-	/**
-	 * Fired when the plugin is activated.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    boolean    $network_wide    True if WPMU superadmin uses
-	 *                                       "Network Activate" action, false if
-	 *                                       WPMU is disabled or plugin is
-	 *                                       activated on an individual blog.
-	 */
+
 	public static function activate($network_wide)
 	{
 
@@ -124,16 +75,7 @@ class BKB_kbdabp
 		}
 	}
 
-	/**
-	 * Fired when the plugin is deactivated.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    boolean    $network_wide    True if WPMU superadmin uses
-	 *                                       "Network Deactivate" action, false if
-	 *                                       WPMU is disabled or plugin is
-	 *                                       deactivated on an individual blog.
-	 */
+
 	public static function deactivate($network_wide)
 	{
 
@@ -159,13 +101,7 @@ class BKB_kbdabp
 		}
 	}
 
-	/**
-	 * Fired when a new site is activated with a WPMU environment.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    int    $blog_id    ID of the new blog.
-	 */
+
 	public function activate_new_site($blog_id)
 	{
 
@@ -178,16 +114,6 @@ class BKB_kbdabp
 		restore_current_blog();
 	}
 
-	/**
-	 * Get all blog ids of blogs in the current network that are:
-	 * - not archived
-	 * - not spam
-	 * - not deleted
-	 *
-	 * @since    1.0.0
-	 *
-	 * @return   array|false    The blog ids, false if no matches.
-	 */
 	private static function get_blog_ids()
 	{
 
@@ -201,31 +127,18 @@ class BKB_kbdabp
 		return $wpdb->get_col($sql);
 	}
 
-	/**
-	 * Fired for each blog when the plugin is activated.
-	 *
-	 * @since    1.0.0
-	 */
+
 	private static function single_activate()
 	{
 		// @TODO: Define activation functionality here
 	}
 
-	/**
-	 * Fired for each blog when the plugin is deactivated.
-	 *
-	 * @since    1.0.0
-	 */
 	private static function single_deactivate()
 	{
 		// @TODO: Define deactivation functionality here
 	}
 
-	/**
-	 * Load the plugin text domain for translation.
-	 *
-	 * @since    1.0.0
-	 */
+
 	public function load_plugin_textdomain()
 	{
 
@@ -262,7 +175,7 @@ class BKB_kbdabp
 				)
 			);
 
-			$loop = new WP_Query($args);
+			$loop = new \WP_Query($args);
 
 			$bkb_kbdabp_excluded_posts = array();
 
@@ -276,7 +189,7 @@ class BKB_kbdabp
 
 			wp_reset_query();
 
-			$query->set('post_type', array('post', 'bwl_kb'));
+			$query->set('post_type', ['post', 'bwl_kb']);
 			$query->set('post__not_in', apply_filters('bkb_rkb_blog_query_filter', $bkb_kbdabp_excluded_posts));
 			return $query;
 		} else {
