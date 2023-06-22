@@ -42,7 +42,6 @@ add_action('plugins_loaded', array(BkbDabpAddonFrontend::class, 'get_instance'))
  * ---------------------------------------------------------------------------- */
 
 if (is_admin()) {
-
     require_once(plugin_dir_path(__FILE__) . 'admin/BkbDabpAddonAdmin.php');
     add_action('plugins_loaded', array(BkbDabpAddonAdmin::class, 'get_instance'));
 }
