@@ -7,14 +7,15 @@
 
 namespace BkbDabpAddon\Frontend;
 
+use \BwlKbManager\Base\BaseController;
+
 class BkbDabpAddonFrontend
 {
 
-	const VERSION = '1.0.3';
-
+	const VERSION = BKBDABP_ADDON_CURRENT_VERSION;
 	protected $plugin_slug = 'bkb-kbdabp';
-
 	protected static $instance = null;
+	public $baseController;
 
 	private function __construct()
 	{
@@ -23,7 +24,9 @@ class BkbDabpAddonFrontend
 
 			add_filter('pre_get_posts', array($this, 'bkb_kbdabp_filter_posts'), 10);
 
-			$bkb_data = get_option('bkb_options');
+			$this->baseController = new BaseController();
+
+			$bkb_data = $this->baseController->bkb_data;
 
 			if (isset($bkb_data['bkb_kb_blog_feed_status']) && $bkb_data['bkb_kb_blog_feed_status'] == 1) {
 
@@ -162,7 +165,7 @@ class BkbDabpAddonFrontend
 
 			$args = array(
 				'post_status'       => 'publish',
-				'post_type'         => 'bwl_kb',
+				'post_type'         => $this->baseController->plugin_post_type,
 				'ignore_sticky_posts' => 1,
 				'posts_per_page' => -1
 			);
@@ -189,7 +192,7 @@ class BkbDabpAddonFrontend
 
 			wp_reset_query();
 
-			$query->set('post_type', ['post', 'bwl_kb']);
+			$query->set('post_type', ['post', $this->baseController->plugin_post_type]);
 			$query->set('post__not_in', apply_filters('bkb_rkb_blog_query_filter', $bkb_kbdabp_excluded_posts));
 			return $query;
 		} else {

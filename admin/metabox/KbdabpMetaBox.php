@@ -7,17 +7,20 @@
 namespace BkbDabpAddon\Admin\Includes;
 
 use \BwlKbManager\Api\CmbMetaBoxApi;
+use \BwlKbManager\Base\BaseController;
 
 class KbdabpMetaBox
 {
     function bkb_kbdabp_custom_meta_init()
     {
 
+        $baseController = new BaseController();
+
         $custom_fields = array(
 
             'meta_box_id'           => 'cmb_bkb_kbdabp', // Unique id of meta box.
             'meta_box_heading'  => __('KB Blog Post Display Settings', 'bkb-kbdabp'), // That text will be show in meta box head section.
-            'post_type'               => 'bwl_kb', // define post type. go to register_post_type method to view post_type name.        
+            'post_type'               => $baseController->plugin_post_type, // define post type. go to register_post_type method to view post_type name.        
             'context'                   => 'normal',
             'priority'                    => 'high',
             'fields'                       => array(
