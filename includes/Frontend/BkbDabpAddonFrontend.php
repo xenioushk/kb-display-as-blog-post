@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * @package BkbDabpAddon
  */
@@ -17,16 +16,18 @@ class BkbDabpAddonFrontend
 	protected static $instance = null;
 	public $baseController;
 
-	private function __construct()
+	public function __construct()
 	{
 
 		if (class_exists('BwlKbManager\\Init') && BKBDABP_PARENT_PLUGIN_REQUIRED_VERSION > '1.0.5') {
 
-			add_filter('pre_get_posts', array($this, 'bkb_kbdabp_filter_posts'), 10);
+			add_filter('pre_get_posts', [$this, 'bkb_kbdabp_filter_posts'], 10);
 
 			$this->baseController = new BaseController();
 
 			$bkb_data = $this->baseController->bkb_data;
+
+			$this->activateFeaturedImageSupport();
 
 			if (isset($bkb_data['bkb_kb_blog_feed_status']) && $bkb_data['bkb_kb_blog_feed_status'] == 1) {
 
@@ -39,7 +40,6 @@ class BkbDabpAddonFrontend
 	{
 		return $this->plugin_slug;
 	}
-
 
 	public static function get_instance()
 	{
@@ -130,7 +130,6 @@ class BkbDabpAddonFrontend
 		return $wpdb->get_col($sql);
 	}
 
-
 	private static function single_activate()
 	{
 		// @TODO: Define activation functionality here
@@ -141,7 +140,6 @@ class BkbDabpAddonFrontend
 		// @TODO: Define deactivation functionality here
 	}
 
-
 	public function load_plugin_textdomain()
 	{
 
@@ -149,6 +147,11 @@ class BkbDabpAddonFrontend
 		$locale = apply_filters('plugin_locale', get_locale(), $domain);
 
 		load_textdomain($domain, trailingslashit(WP_LANG_DIR) . $domain . '/' . $domain . '-' . $locale . '.mo');
+	}
+
+	public function activateFeaturedImageSupport()
+	{
+		add_post_type_support($this->baseController->plugin_post_type, 'thumbnail');
 	}
 
 	public function bkb_kbdabp_include_feed($qv)

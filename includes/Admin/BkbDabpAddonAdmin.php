@@ -6,11 +6,12 @@
 
 namespace BkbDabpAddon\Admin;
 
+use BkbDabpAddon\Admin\Metabox\KbdabpMetaBox;
 use BkbDabpAddon\Frontend\BkbDabpAddonFrontend;
+// use BkbDabpAddon\Admin\Metabox;
 
 class BkbDabpAddonAdmin
 {
-
     protected static $instance = null;
 
     public $plugin_slug;
@@ -26,20 +27,14 @@ class BkbDabpAddonAdmin
         $plugin = BkbDabpAddonFrontend::get_instance();
         $this->plugin_slug = $plugin->get_plugin_slug();
 
-        require_once(BKBDABP_DIR . 'admin/metabox/KbdabpMetaBox.php');
+
+        // META BOX START EXECUTION FROM HERE.
+
+        add_action('admin_init', [new KbdabpMetaBox(), 'bkb_kbdabp_custom_meta_init']);
     }
 
     public static function get_instance()
     {
-
-        /*
-         * @TODO :
-         *
-         * - Uncomment following lines if the admin class should only be available for super admins
-         */
-        /* if( ! is_super_admin() ) {
-          return;
-          } */
 
         // If the single instance hasn't been set, set it now.
         if (null == self::$instance) {

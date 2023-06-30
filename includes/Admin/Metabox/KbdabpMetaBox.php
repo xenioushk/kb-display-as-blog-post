@@ -4,14 +4,14 @@
  * @package BkbDabpAddon
  */
 
-namespace BkbDabpAddon\Admin\Includes;
+namespace BkbDabpAddon\Admin\Metabox;
 
 use \BwlKbManager\Api\CmbMetaBoxApi;
 use \BwlKbManager\Base\BaseController;
 
 class KbdabpMetaBox
 {
-    function bkb_kbdabp_custom_meta_init()
+    public function bkb_kbdabp_custom_meta_init()
     {
 
         $baseController = new BaseController();
@@ -46,8 +46,3 @@ class KbdabpMetaBox
         }
     }
 }
-
-
-// META BOX START EXECUTION FROM HERE.
-
-add_action('admin_init', [new KbdabpMetaBox(), 'bkb_kbdabp_custom_meta_init']);

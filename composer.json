@@ -1,0 +1,17 @@
+{
+  "name": "xenioushk/kb_display_as_blog_post",
+  "description": "Addon for BWL KB Manager",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "BkbDabpAddon\\": "includes/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Mahbub Alam Khan",
+      "email": "hkhan.cse@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable"
+}

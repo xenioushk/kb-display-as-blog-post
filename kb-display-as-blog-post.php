@@ -12,9 +12,11 @@
  * Author:             Md Mahbub Alam Khan
  * Author URI:      https://1.envato.market/xenioushk
  */
-// If this file is called directly, abort.
-if (!defined('WPINC')) {
-    die;
+// security check.
+defined('ABSPATH') or die("Unauthorized access");
+
+if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
+    require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
 use BkbDabpAddon\Frontend\BkbDabpAddonFrontend;
@@ -30,7 +32,7 @@ define('BKBDABP_ADDON_PREFIX', 'bkb-kbdabp'); // Addon Data Prefix. It must be s
 
 define('BKBDABP_DIR', plugin_dir_path(__FILE__));
 
-require_once(plugin_dir_path(__FILE__) . 'frontend/BkbDabpAddonFrontend.php');
+// require_once(plugin_dir_path(__FILE__) . 'frontend/BkbDabpAddonFrontend.php');
 
 register_activation_hook(__FILE__, array(BkbDabpAddonFrontend::class, 'activate'));
 register_deactivation_hook(__FILE__, array(BkbDabpAddonFrontend::class, 'deactivate'));
@@ -42,6 +44,6 @@ add_action('plugins_loaded', array(BkbDabpAddonFrontend::class, 'get_instance'))
  * ---------------------------------------------------------------------------- */
 
 if (is_admin()) {
-    require_once(plugin_dir_path(__FILE__) . 'admin/BkbDabpAddonAdmin.php');
+    // require_once(plugin_dir_path(__FILE__) . 'admin/BkbDabpAddonAdmin.php');
     add_action('plugins_loaded', array(BkbDabpAddonAdmin::class, 'get_instance'));
 }
