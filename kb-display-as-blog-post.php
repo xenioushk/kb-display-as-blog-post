@@ -6,10 +6,10 @@
 
 /**
  * Plugin Name:    KB Display As Blog Post - BWL Knowledge Base Manager Addon
- * Plugin URI:        http://bit.ly/kb-as-blog
+ * Plugin URI:       http://bit.ly/kb-as-blog
  * Description:      This is an Addon for BWL Knowledge Base Manager. It allows you to display your Knowledge Base contents as blog post. This Addon automatically include KB posts in you're blog listings according to date order. Addon comes with Quick and Bulk edit options, so you can easily choose which KB you want to show in blog lists. Addon also allows you to integrate featured image with every KB.
  * Version:           1.0.7
- * Author:             Md Mahbub Alam Khan
+ * Author:            Mahbub Alam Khan
  * Author URI:      https://1.envato.market/xenioushk
  */
 // security check.
@@ -35,18 +35,11 @@ define('BKBDABP_ADDON_UPDATER_SLUG', plugin_basename(__FILE__)); // change plugi
 
 define("BKBDABP_PLUGIN_DIR", plugins_url() . '/kb-display-as-blog-post/');
 
-// require_once(plugin_dir_path(__FILE__) . 'frontend/BkbDabpAddonFrontend.php');
-
 register_activation_hook(__FILE__, array(BkbDabpAddonFrontend::class, 'activate'));
 register_deactivation_hook(__FILE__, array(BkbDabpAddonFrontend::class, 'deactivate'));
 
 add_action('plugins_loaded', array(BkbDabpAddonFrontend::class, 'get_instance'));
 
-/* ----------------------------------------------------------------------------*
- * Dashboard and Administrative Functionality
- * ---------------------------------------------------------------------------- */
-
 if (is_admin()) {
-    // require_once(plugin_dir_path(__FILE__) . 'admin/BkbDabpAddonAdmin.php');
     add_action('plugins_loaded', array(BkbDabpAddonAdmin::class, 'get_instance'));
 }
