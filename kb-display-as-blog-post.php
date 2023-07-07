@@ -31,6 +31,9 @@ define('BKBDABP_ADDON_CURRENT_VERSION', '1.0.7'); // change plugin current versi
 define('BKBDABP_ADDON_PREFIX', 'bkb-kbdabp'); // Addon Data Prefix. It must be simmilar with $plugin slug (kb-display-as-blog-post\public\class-kbdabp-addon.php).
 
 define('BKBDABP_DIR', plugin_dir_path(__FILE__));
+define('BKBDABP_ADDON_UPDATER_SLUG', plugin_basename(__FILE__)); // change plugin current version in here.
+
+define("BKBDABP_PLUGIN_DIR", plugins_url() . '/kb-display-as-blog-post/');
 
 // require_once(plugin_dir_path(__FILE__) . 'frontend/BkbDabpAddonFrontend.php');
 

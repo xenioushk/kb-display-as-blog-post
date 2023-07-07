@@ -26,11 +26,13 @@ class BkbDabpAddonAdmin
 
         $plugin = BkbDabpAddonFrontend::get_instance();
         $this->plugin_slug = $plugin->get_plugin_slug();
+        $this->includedFiles();
 
 
         // META BOX START EXECUTION FROM HERE.
 
         add_action('admin_init', [new KbdabpMetaBox(), 'bkb_kbdabp_custom_meta_init']);
+        add_action('admin_enqueue_scripts', array($this, 'bkb_kbdabp_admin_enqueue_scripts'));
     }
 
     public static function get_instance()
@@ -51,5 +53,28 @@ class BkbDabpAddonAdmin
         echo '<div class="updated"><p>You need to download & install '
             . '<b><a href="https://1.envato.market/bkbm-wp" target="_blank">' . BKBDABP_ADDON_PARENT_PLUGIN_TITLE . '</a></b> '
             . 'to use <b>' . BKBDABP_ADDON_TITLE . '</b>. </p></div>';
+    }
+
+    public function bkb_kbdabp_admin_enqueue_scripts($hook)
+    {
+
+        wp_enqueue_script($this->plugin_slug . '-admin', BKBDABP_PLUGIN_DIR . 'assets/scripts/admin.js', ['jquery'], BKBDABP_ADDON_CURRENT_VERSION, TRUE);
+
+        wp_localize_script(
+            $this->plugin_slug . '-admin',
+            'BkbmDabpAdminData',
+            [
+                'product_id' => 11245275,
+                'installation' => get_option('bkbm_dabp_installation')
+            ]
+        );
+    }
+
+
+    public function includedFiles()
+    {
+        require_once(BKBDABP_DIR . 'includes/autoupdater/WpAutoUpdater.php');
+        require_once(BKBDABP_DIR . 'includes/autoupdater/installer.php');
+        require_once(BKBDABP_DIR . 'includes/autoupdater/updater.php');
     }
 }
