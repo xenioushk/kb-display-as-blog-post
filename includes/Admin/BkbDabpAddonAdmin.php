@@ -64,7 +64,7 @@ class BkbDabpAddonAdmin
             $this->plugin_slug . '-admin',
             'BkbmDabpAdminData',
             [
-                'product_id' => 11245275,
+                'product_id' => BKBDABP_ADDON_CC_ID,
                 'installation' => get_option('bkbm_dabp_installation')
             ]
         );
