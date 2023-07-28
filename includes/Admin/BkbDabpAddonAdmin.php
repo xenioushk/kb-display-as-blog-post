@@ -65,7 +65,7 @@ class BkbDabpAddonAdmin
             'BkbmDabpAdminData',
             [
                 'product_id' => BKBDABP_ADDON_CC_ID,
-                'installation' => get_option('bkbm_dabp_installation')
+                'installation' => get_option(BKBDABP_ADDON_INSTALLATION_TAG)
             ]
         );
     }

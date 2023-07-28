@@ -28,6 +28,8 @@ define('BKBDABP_ADDON_TITLE', 'KB Display As Blog Post Addon');
 define('BKBDABP_PARENT_PLUGIN_REQUIRED_VERSION', '1.4.2'); // change plugin required version in here.
 define('BKBDABP_ADDON_CURRENT_VERSION', '1.0.8'); // change plugin current version in here.
 
+define('BKBDABP_ADDON_INSTALLATION_TAG', 'bkbm_dabp_installation_' . str_replace('.', '_', BKBDABP_ADDON_CURRENT_VERSION));
+
 define('BKBDABP_ADDON_PREFIX', 'bkb-kbdabp'); // Addon Data Prefix. It must be simmilar with $plugin slug (kb-display-as-blog-post\public\class-kbdabp-addon.php).
 
 define('BKBDABP_DIR', plugin_dir_path(__FILE__));
