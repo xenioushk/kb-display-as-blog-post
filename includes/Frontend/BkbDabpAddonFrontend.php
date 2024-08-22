@@ -164,7 +164,7 @@ class BkbDabpAddonFrontend
 	public function bkb_kbdabp_filter_posts($query)
 	{
 
-		if (is_home() && !is_admin() && !is_search() && $query->is_main_query()) {
+		if ($query->is_main_query() && is_home() && !is_admin() && !is_search()) {
 
 			$args = array(
 				'post_status'       => 'publish',
