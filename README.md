@@ -2,6 +2,8 @@
 
 This is an Addon for BWL Knowledge Base Manager. It allows you to display your Knowledge Base contents as blog post. This Addon automatically include KB posts in you're blog listings according to date order. Addon comes with Quick and Bulk edit options, so you can easily choose which KB you want to show in blog lists. Addon also allows you to integrate featured image with every KB.
 
+![overview of KB Display As Blog Post - BWL Knowledge Base Manager Addon](https://xenioushk.github.io/docs-plugins-addon/bkbm-addon/kdapb/img/02_bkb_kbdabp_demo.png)
+
 [Demo](https://projects.bluewindlab.net/wpplugin/bkbm/) | [Download](https://bluewindlab.net/portfolio/kb-display-as-blog-post-addon/) | [Documentation](https://xenioushk.github.io/docs-plugins-addon/bkbm-addon/kdapb/index.html)
 
 ## Addon requirements
