@@ -1,11 +1,14 @@
 {
   "name": "xenioushk/kb_display_as_blog_post",
-  "description": "Addon for BWL KB Manager",
+  "description": "This Addon automatically include KB posts in you're blog listings according to date order.",
   "type": "project",
   "autoload": {
     "psr-4": {
-      "BkbDabpAddon\\": "includes/"
+      "KBDABP\\": "includes/"
     }
+  },
+  "require": {
+    "xenioushk/bwl-plugin-api": "^1.0"
   },
   "require-dev": {
     "wp-coding-standards/wpcs": "^3.1",
