@@ -27,10 +27,8 @@ class Init {
 			'helpers' => self::get_helper_classes(),
 			'base'    => self::get_base_classes(),
 			'meta'    => self::get_meta_classes(),
-			// 'actions' => self::get_action_classes(),
 			'filters' => self::get_filter_classes(),
 			'cmb'     => self::get_cmb_classes(),
-			// 'notices'  => self::get_notices_classes(),
 		];
 
 		foreach ( $service_classes as $service_class ) {
@@ -81,11 +79,7 @@ class Init {
 	 */
 	private static function get_base_classes() {
 		$classes = [
-			// Base\Enqueue::class,
-			// Base\CustomTheme::class,
-			// Base\IncludePluginFiles::class,
-			// Base\AdminEnqueue::class,
-			// Base\FrontendInlineJs::class,
+			Base\AdminEnqueue::class,
 			Base\PluginUpdate::class,
 			Base\Language::class,
 			Base\AdminAjaxHandlers::class,
@@ -102,7 +96,6 @@ class Init {
 	private static function get_helper_classes() {
 		$classes = [
 			Helpers\PluginConstants::class,
-			// Helpers\RkbHelpers::class,
 		];
 		return $classes;
 	}
@@ -119,21 +112,6 @@ class Init {
 		return $classes;
 	}
 
-
-	/**
-	 * Get Action classes.
-	 *
-	 * @return array
-	 */
-	private static function get_action_classes() {
-
-		$classes = [
-			Controllers\Actions\Admin\QuickBulkEdit::class,
-			Controllers\Actions\Admin\ManagePosts::class,
-		];
-		return $classes;
-	}
-
 	/**
 	 * Get Filter classes.
 	 *
@@ -143,8 +121,7 @@ class Init {
 
 		$classes = [
 			Controllers\Filters\KBDABPFilters::class,
-			// Controllers\Filters\Admin\RKBFilters::class,
-			// Controllers\Filters\Admin\CustomColumns::class,
+			Controllers\Filters\Admin\CustomColumns::class,
 		];
 		return $classes;
 	}
@@ -158,18 +135,6 @@ class Init {
 
 		$classes = [
 			Cmb\KbdabpMetaBox::class,
-		];
-		return $classes;
-	}
-
-	/**
-	 * Get Notices classes.
-	 *
-	 * @return array
-	 */
-	private static function get_notices_classes() {
-		$classes = [
-			Controllers\Notices\PluginNoticesAjaxHandler::class,
 		];
 		return $classes;
 	}

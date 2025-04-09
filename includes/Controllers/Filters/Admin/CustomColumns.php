@@ -1,10 +1,10 @@
 <?php
-namespace BKBRKB\Controllers\Filters\Admin;
+namespace KBDABP\Controllers\Filters\Admin;
 
 /**
  * Custom Product Columns
  *
- * @package BKBRKB
+ * @package KBDABP
  */
 class CustomColumns {
 
@@ -26,7 +26,7 @@ class CustomColumns {
      * @return array
      */
 	public function columns_header( $columns ) {
-		$columns['bkb_rkb_status'] = esc_html__( 'Access', 'bkb_rkb' );
+		$columns['bkb_kbdabp_status'] = esc_html__( 'Hide From Blog?', 'bkb_rkb' );
 
 		return $columns;
 	}
@@ -41,27 +41,21 @@ class CustomColumns {
 
 		switch ( $column ) {
 
-			case 'bkb_rkb_status':
-				$bkb_rkb_status = get_post_meta( $post->ID, 'bkb_rkb_status', true ) ?? 0;
+			case 'bkb_kbdabp_status':
+				$status = (int) get_post_meta( $post->ID, 'bkb_kbdabp_status', true );
 
-				// FAQ Display Status In Text.
+				$status_title = sprintf(
+                    "<span class='dashicons %s' title='%s'></span>",
+                    $status === 1 ? 'dashicons-yes' : 'dashicons-no',
+                    $status === 1 ? esc_attr__( 'Yes', 'bkb-kbdabp' ) : esc_attr__( 'No', 'bkb-kbdabp' )
+				);
 
-				$status_icon = ( $bkb_rkb_status == 1 ) ? '<span class="dashicons dashicons-lock"></span>' : '<span class="dashicons dashicons-unlock"></span>';
-
-				$access_text = __( 'All types of user can view this KB content', 'bkb_rkb' );
-
-				if ( $bkb_rkb_status == 1 ) {
-					$alllowed_roles = get_post_meta( $post->ID, 'bkb_rkb_user_roles', true );
-
-					if ( ! is_array( $alllowed_roles ) ) {
-						$access_text = __( 'only administrator can access this KB', 'bkb_rkb' );
-					} else {
-						$bkb_roles   = implode( ', ', $alllowed_roles );
-						$access_text = __( 'only', 'bkb_rkb' ) . ' ' . $bkb_roles . ' ' . __( 'can access this KB', 'bkb_rkb' );
-					}
-				}
-
-				echo '<div id="bkb_rkb_status-' . $post->ID . '" data-status_code="' . $bkb_rkb_status . '" title="' . ucwords( $access_text ) . '">' . $status_icon . '</div>';
+				printf(
+                    '<div id="bkb_kbdabp_status-%d" data-status_code="%d">%s</div>',
+                    $post->ID,
+                    $status,
+                    $status_title
+				);
 
 				break;
 		}

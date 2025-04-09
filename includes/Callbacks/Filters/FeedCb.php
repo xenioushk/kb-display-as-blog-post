@@ -1,9 +1,6 @@
 <?php
 namespace KBDABP\Callbacks\Filters;
 
-use KBDABP\Helpers\RkbHelpers;
-use KBDABP\Helpers\PluginConstants;
-
 /**
  * Class for registering feed filter callback.
  *

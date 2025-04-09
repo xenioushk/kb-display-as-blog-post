@@ -1,8 +1,10 @@
 <?php
 namespace KBDABP\Callbacks\Filters;
 
+use WP_Query;
+
 /**
- * Class for registering taxonomy callback.
+ * Class for registering posts filter callback.
  *
  * @package KBDABP
  * @since: 1.0.0
@@ -35,7 +37,7 @@ class PostsFilterCb {
 					],
 				];
 
-				$loop = new \WP_Query( $args );
+				$loop = new WP_Query( $args );
 
 				$bkb_kbdabp_excluded_posts = [];
 

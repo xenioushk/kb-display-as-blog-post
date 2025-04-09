@@ -83,37 +83,3 @@ function init_kbdabp() {
 }
 
 add_action( 'init', __NAMESPACE__ . '\\init_kbdabp' );
-
-
-return;
-
-use BkbDabpAddon\Frontend\BkbDabpAddonFrontend;
-use BkbDabpAddon\Admin\BkbDabpAddonAdmin;
-
-
-
-define( 'BKBDABP_PARENT_PLUGIN_INSTALLED_VERSION', get_option( 'bwl_kb_plugin_version' ) );
-define( 'BKBDABP_ADDON_PARENT_PLUGIN_TITLE', 'BWL Knowledge Base Manager Plugin' );
-define( 'BKBDABP_ADDON_TITLE', 'KB Display As Blog Post Addon' );
-define( 'BKBDABP_PARENT_PLUGIN_REQUIRED_VERSION', '1.4.2' ); // change plugin required version in here.
-define( 'BKBDABP_ADDON_CURRENT_VERSION', '1.0.9' ); // change plugin current version in here.
-
-define( 'BKBDABP_ADDON_INSTALLATION_TAG', 'bkbm_dabp_installation_' . str_replace( '.', '_', BKBDABP_ADDON_CURRENT_VERSION ) );
-
-define( 'BKBDABP_ADDON_PREFIX', 'bkb-kbdabp' ); // Addon Data Prefix. It must be simmilar with $plugin slug (kb-display-as-blog-post\public\class-kbdabp-addon.php).
-
-define( 'BKBDABP_DIR', plugin_dir_path( __FILE__ ) );
-define( 'BKBDABP_ADDON_UPDATER_SLUG', plugin_basename( __FILE__ ) ); // change plugin current version in here.
-
-define( 'BKBDABP_ADDON_CC_ID', '11245275' ); // Plugin codecanyon Id.
-
-define( 'BKBDABP_PLUGIN_DIR', plugins_url() . '/kb-display-as-blog-post/' );
-
-register_activation_hook( __FILE__, [ BkbDabpAddonFrontend::class, 'activate' ] );
-register_deactivation_hook( __FILE__, [ BkbDabpAddonFrontend::class, 'deactivate' ] );
-
-add_action( 'plugins_loaded', [ BkbDabpAddonFrontend::class, 'get_instance' ] );
-
-if ( is_admin() ) {
-    add_action( 'plugins_loaded', [ BkbDabpAddonAdmin::class, 'get_instance' ] );
-}
