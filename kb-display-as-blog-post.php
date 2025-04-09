@@ -7,7 +7,7 @@
  * Author:            Mahbub Alam Khan
  * Author URI:      https://bluewindlab.net
  * WP Requires at least: 6.0+
- * Text Domain:    kbdabp
+ * Text Domain:    bkb-kbdabp
  * Domain Path:     /languages/
  *
  * @package KBDABP

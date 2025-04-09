@@ -29,6 +29,7 @@ class Init {
 			'meta'    => self::get_meta_classes(),
 			// 'actions' => self::get_action_classes(),
 			'filters' => self::get_filter_classes(),
+			'cmb'     => self::get_cmb_classes(),
 			// 'notices'  => self::get_notices_classes(),
 		];
 
@@ -144,6 +145,19 @@ class Init {
 			Controllers\Filters\KBDABPFilters::class,
 			// Controllers\Filters\Admin\RKBFilters::class,
 			// Controllers\Filters\Admin\CustomColumns::class,
+		];
+		return $classes;
+	}
+
+	/**
+     * Get CMB classes.
+     *
+     * @return array
+     */
+	private static function get_cmb_classes() {
+
+		$classes = [
+			Cmb\KbdabpMetaBox::class,
 		];
 		return $classes;
 	}

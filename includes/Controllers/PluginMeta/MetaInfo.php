@@ -31,7 +31,7 @@ class MetaInfo {
 			// nt = 1 // new tab.
 			$additional_links = [
 				[
-					'title' => esc_html__( 'Docs', 'kbdabp' ),
+					'title' => esc_html__( 'Docs', 'bkb-kbdabp' ),
 					'url'   => 'https://xenioushk.github.io/docs-plugins-addon/bkbm-addon/kdapb/index.html',
 					'nt'    => 1,
 				],
