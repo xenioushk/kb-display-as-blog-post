@@ -10,6 +10,8 @@
     "start:hot": "wp-scripts start --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "plugin-zip": "wp-scripts plugin-zip",
+    "make-pot": "wp i18n make-pot . languages/kb-display-as-blog-post.pot --slug=kb-display-as-blog-post --domain=kbdabp --exclude=node_modules,src,vendor",
+    "make-json": "wp i18n make-json languages/ --no-purge",
     "lint:php": "vendor/bin/phpcs",
     "lint:php:fix": "vendor/bin/phpcbf"
   },

@@ -1,0 +1,44 @@
+# Copyright (C) 2025 Mahbub Alam Khan
+# This file is distributed under the same license as the KB Display As Blog Post Addon plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: KB Display As Blog Post Addon 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/kb-display-as-blog-post\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-04-09T12:49:17+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: kbdabp\n"
+
+#. Plugin Name of the plugin
+#: kb-display-as-blog-post.php
+msgid "KB Display As Blog Post Addon"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: kb-display-as-blog-post.php
+msgid "https://1.envato.market/bkbm-wp"
+msgstr ""
+
+#. Description of the plugin
+#: kb-display-as-blog-post.php
+msgid "This Addon automatically include KB posts in you're blog listings according to date order."
+msgstr ""
+
+#. Author of the plugin
+#: kb-display-as-blog-post.php
+msgid "Mahbub Alam Khan"
+msgstr ""
+
+#. Author URI of the plugin
+#: kb-display-as-blog-post.php
+msgid "https://bluewindlab.net"
+msgstr ""
+
+#: includes/Controllers/PluginMeta/MetaInfo.php:34
+msgid "Docs"
+msgstr ""
