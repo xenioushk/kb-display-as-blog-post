@@ -1,11 +1,11 @@
 <?php
-namespace BKBRKB\Base;
+namespace KBDABP\Base;
 
 /**
  * Class for plucin activation.
  *
  * @since: 1.1.0
- * @package BKBRKB
+ * @package KBDABP
  */
 class Activate {
 

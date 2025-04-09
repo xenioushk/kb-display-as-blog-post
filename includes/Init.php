@@ -24,7 +24,7 @@ class Init {
 		$services = [];
 
 		$service_classes = [
-			// 'helpers' => self::get_helper_classes(),
+			'helpers' => self::get_helper_classes(),
 			// 'base'    => self::get_base_classes(),
 			// 'meta'    => self::get_meta_classes(),
 			// 'actions' => self::get_action_classes(),
@@ -101,7 +101,7 @@ class Init {
 	private static function get_helper_classes() {
 		$classes = [
 			Helpers\PluginConstants::class,
-			Helpers\RkbHelpers::class,
+			// Helpers\RkbHelpers::class,
 		];
 		return $classes;
 	}
