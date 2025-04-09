@@ -144,12 +144,7 @@ class BkbDabpAddonFrontend {
         add_post_type_support( $this->baseController->plugin_post_type, 'thumbnail' );
     }
 
-    public function bkb_kbdabp_include_feed( $qv ) {
-        if ( isset( $qv['feed'] ) && ! isset( $qv['post_type'] ) ) {
-            $qv['post_type'] = [ 'bwl_kb' ];
-        }
-        return $qv;
-    }
+
 
     public function bkb_kbdabp_filter_posts( $query ) {
 

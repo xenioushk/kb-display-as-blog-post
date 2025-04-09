@@ -28,7 +28,7 @@ class Init {
 			'base'    => self::get_base_classes(),
 			'meta'    => self::get_meta_classes(),
 			// 'actions' => self::get_action_classes(),
-			// 'filters' => self::get_filter_classes(),
+			'filters' => self::get_filter_classes(),
 			// 'notices'  => self::get_notices_classes(),
 		];
 
@@ -87,6 +87,7 @@ class Init {
 			// Base\FrontendInlineJs::class,
 			Base\PluginUpdate::class,
 			Base\Language::class,
+			Base\Support::class,
 			Base\AdminAjaxHandlers::class,
 
 		];
@@ -141,9 +142,9 @@ class Init {
 	private static function get_filter_classes() {
 
 		$classes = [
-			Controllers\Filters\RKBFilters::class,
-			Controllers\Filters\Admin\RKBFilters::class,
-			Controllers\Filters\Admin\CustomColumns::class,
+			Controllers\Filters\KBDABPFilters::class,
+			// Controllers\Filters\Admin\RKBFilters::class,
+			// Controllers\Filters\Admin\CustomColumns::class,
 		];
 		return $classes;
 	}

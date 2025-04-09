@@ -52,6 +52,7 @@ class PluginConstants {
 		self::set_paths_constants();
 		self::set_base_constants();
 		self::set_assets_constants();
+		self::set_options_constants();
 		self::set_updater_constants();
 		self::set_product_info_constants();
 	}
@@ -98,6 +99,14 @@ class PluginConstants {
 		define( 'KBDABP_PLUGIN_STYLES_ASSETS_DIR', KBDABP_PLUGIN_URL . 'assets/styles/' );
 		define( 'KBDABP_PLUGIN_SCRIPTS_ASSETS_DIR', KBDABP_PLUGIN_URL . 'assets/scripts/' );
 		define( 'KBDABP_PLUGIN_LIBS_DIR', KBDABP_PLUGIN_URL . 'libs/' );
+	}
+
+
+	/**
+	 * Set the plugin options constants.
+	 */
+	private static function set_options_constants() {
+		define( 'KBDABP_FEED_STATUS', ! empty( self::$plugin_options['bkb_kb_blog_feed_status'] ) ? 1 : 0 );
 	}
 
 	/**
