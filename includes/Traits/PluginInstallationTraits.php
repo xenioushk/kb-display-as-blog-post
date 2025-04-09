@@ -1,5 +1,5 @@
 <?php
-namespace BKBRKB\Traits;
+namespace KBDABP\Traits;
 
 trait PluginInstallationTraits {
 	/**

@@ -106,7 +106,7 @@ class PluginConstants {
 	private static function set_updater_constants() {
 
 		// Only change the slug.
-		$slug        = 'bkbm/notifier_bkbm_rkbur.php';
+		$slug        = 'bkbm/notifier_bkbm_dabp.php';
 		$updater_url = "https://projects.bluewindlab.net/wpplugin/zipped/plugins/{$slug}";
 
 		define( 'KBDABP_PLUGIN_UPDATER_URL', $updater_url ); // phpcs:ignore
