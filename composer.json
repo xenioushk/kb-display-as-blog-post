@@ -1,6 +1,6 @@
 {
   "name": "xenioushk/kb_display_as_blog_post",
-  "description": "This Addon automatically include KB posts in you're blog listings according to date order.",
+  "description": "This Addon automatically include KB posts in the blog listings according to date order.",
   "type": "project",
   "autoload": {
     "psr-4": {
