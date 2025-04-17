@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the KB Display As Blog Post Addon plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: KB Display As Blog Post Addon 1.1.0\n"
+"Project-Id-Version: KB Display As Blog Post Addon 2.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/kb-display-as-blog-post\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-09T13:46:22+00:00\n"
+"POT-Creation-Date: 2025-04-17T21:03:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: bkb-kbdabp\n"
@@ -39,22 +39,39 @@ msgstr ""
 msgid "https://bluewindlab.net"
 msgstr ""
 
-#: includes/Cmb/KbdabpMetaBox.php:36
+#: includes/Cmb/KbdabpMetaBox.php:30
 msgid "KB Blog Post Display Settings"
 msgstr ""
 
-#: includes/Cmb/KbdabpMetaBox.php:42
+#: includes/Cmb/KbdabpMetaBox.php:36
 msgid "Hide From Blog List?"
 msgstr ""
 
-#: includes/Cmb/KbdabpMetaBox.php:47
+#: includes/Cmb/KbdabpMetaBox.php:41
+#: includes/Controllers/Filters/Admin/CustomColumns.php:50
 msgid "No"
 msgstr ""
 
-#: includes/Cmb/KbdabpMetaBox.php:48
+#: includes/Cmb/KbdabpMetaBox.php:42
+#: includes/Controllers/Filters/Admin/CustomColumns.php:50
 msgid "Yes"
 msgstr ""
 
 #: includes/Controllers/PluginMeta/MetaInfo.php:34
 msgid "Docs"
+msgstr ""
+
+#. translators: 1: Plugin name, 2: Addon title, 3: Current version, 4: Minimum required version
+#: includes/Helpers/DependencyManager.php:129
+msgid "The %2$s requires %1$s %4$s or higher. You are using %3$s"
+msgstr ""
+
+#. translators: 1: Plugin name, 2: Addon title
+#: includes/Helpers/DependencyManager.php:148
+msgid "Please install and activate the %1$s plugin to use %2$s."
+msgstr ""
+
+#. translators: 1: Plugin activation link, 2: Addon title
+#: includes/Helpers/DependencyManager.php:165
+msgid "Please Activate the %1$s to use the %2$s."
 msgstr ""
