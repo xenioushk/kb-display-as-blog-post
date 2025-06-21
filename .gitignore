@@ -3,4 +3,5 @@ tests
 *.map
 *.hot-update.js
 *.hot-update.json
+.DS_Store
 vendor

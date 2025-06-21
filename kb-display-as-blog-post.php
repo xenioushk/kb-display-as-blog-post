@@ -3,7 +3,7 @@
  * Plugin Name:    KB Display As Blog Post Addon
  * Plugin URI:       https://1.envato.market/bkbm-wp
  * Description:      This Addon automatically include KB posts in you're blog listings according to date order.
- * Version:           2.0.1
+ * Version:           2.1.0
  * Author:            Mahbub Alam Khan
  * Author URI:      https://bluewindlab.net
  * WP Requires at least: 6.0+
@@ -67,12 +67,6 @@ function init_kbdabp() {
     // Check if the parent plugin installed.
     if ( ! class_exists( 'BwlKbManager\\Init' ) ) {
         add_action( 'admin_notices', [ Helpers\DependencyManager::class, 'notice_missing_main_plugin' ] );
-        return;
-    }
-
-    // Check parent plugin activation status.
-    if ( ! ( Helpers\DependencyManager::get_product_activation_status() ) ) {
-        add_action( 'admin_notices', [ Helpers\DependencyManager::class, 'notice_missing_purchase_verification' ] );
         return;
     }
 
